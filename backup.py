@@ -42,7 +42,8 @@ PULL_LOCATIONS = [
     ("/home/kyle/.thunderbird", "thunderbird"),
     ("/home/kyle/code/", "code"),
     ("/home/kyle/Music/", "Music"),
-    ("/home/kyle/Documents/", "Documents")
+    ("/home/kyle/Documents/", "Documents"),
+    ("/home/kyle/.ssh/", "ssh")
 ]
 
 
