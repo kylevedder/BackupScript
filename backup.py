@@ -14,7 +14,6 @@ class c:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-
 VERSION = "0.0.1"
 HEADER = """Welcome to Backup Script v{0}! Sorry for all the bugs!
  ____________________        _____________
