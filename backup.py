@@ -43,6 +43,7 @@ PULL_LOCATIONS = [
     ("/home/kyle/Music/", "Music"),
     ("/home/kyle/Documents/", "Documents"),
     ("/home/kyle/.ssh/", "ssh")
+    ("/home/kyle/.gnupg/", "gnupg")
 ]
 
 
