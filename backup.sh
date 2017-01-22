@@ -16,6 +16,8 @@ pull_locations[6]="/home/kyle/.gnupg/";
 push_locations[6]="gnupg";
 
 base_path="/media/kyle/Pepper (1TB)/Backups/"
+today=`date +%Y-%m-%d_%H-%M-%S`
+archive_name="$today""backup.7z";
 
 "$base_path"  2> /dev/null
 media_attached=$?
@@ -25,14 +27,11 @@ if [ "$media_attached" -eq "126" ]; then
     for i in `seq 0 6`;
     do
         pull=${pull_locations[$i]}
-        push=${push_locations[$i]}
-        today=`date +%Y-%m-%d_%H-%M-%S`
-        push_full_path="$base_path""$push/$today-$push/"
-        echo $push_full_path
-        mkdir "$push_full_path"
-        echo "$push_full_path"
-        cp -r "$pull" "$push_full_path$push"
+        file_list="$file_list $pull"
     done
+    echo "Creating '$archive_name' from: '$file_list'"
+    7z a -p "$archive_name" $file_list
+    cp "$archive_name" "$base_path"
 else
     echo "No media backup media attached!";
 fi
