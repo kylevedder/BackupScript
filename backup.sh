@@ -19,18 +19,21 @@ base_path="/media/kyle/Pepper (1TB)/Backups/"
 today=`date +%Y-%m-%d_%H-%M-%S`
 archive_name="$today""backup.7z";
 
+for i in `seq 0 6`;
+do
+    pull=${pull_locations[$i]}
+    file_list="$file_list $pull"
+done
+echo "Creating '$archive_name' from: '$file_list'"
+7z a -p "$archive_name" $file_list
+
+echo "Created archive '$archive_name'"
+
 "$base_path"  2> /dev/null
 media_attached=$?
 # 126 returned if directory exists, 127 if it does not.
 if [ "$media_attached" -eq "126" ]; then
     echo "Backup media found!"
-    for i in `seq 0 6`;
-    do
-        pull=${pull_locations[$i]}
-        file_list="$file_list $pull"
-    done
-    echo "Creating '$archive_name' from: '$file_list'"
-    7z a -p "$archive_name" $file_list
     cp "$archive_name" "$base_path"
 else
     echo "No media backup media attached!";
