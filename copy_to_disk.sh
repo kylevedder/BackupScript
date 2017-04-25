@@ -34,5 +34,5 @@ if [ "$media_attached" -eq "126" ]; then
 else
     echo "No media backup media attached!";
 fi
-0
+
 
