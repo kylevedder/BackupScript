@@ -15,6 +15,8 @@ push_locations[5]="ssh";
 pull_locations[6]="/home/kyle/.gnupg/";
 push_locations[6]="gnupg";
 
+echo -e "\033[0;31mCreating password protected zip of the above locations...\033[0m"
+
 base_path="/media/kyle/Pepper (1TB)/Backups/"
 today=`date +%Y-%m-%d_%H-%M-%S`
 archive_name="$today""backup.7z";
