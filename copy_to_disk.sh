@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pull_locations[0]="/home/kyle/scripts/";
-push_locations[0]="scripts";
+pull_locations[0]="/home/kyle/bin/";
+push_locations[0]="bin";
 pull_locations[1]="/home/kyle/.thunderbird/";
 push_locations[1]="thunderbird";
 pull_locations[2]="/home/kyle/code/";
